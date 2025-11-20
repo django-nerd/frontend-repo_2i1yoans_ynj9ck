@@ -2,12 +2,14 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import UploadForm from './components/UploadForm'
 import ExploreGrid from './components/ExploreGrid'
+import Background3D from './components/Background3D'
 import { useState } from 'react'
 
 function App() {
   const [refreshKey, setRefreshKey] = useState(0)
   return (
-    <div className="min-h-screen bg-slate-900">
+    <div className="min-h-screen bg-transparent">
+      <Background3D />
       <Navbar />
       <main className="pt-14">
         <Hero />
@@ -15,7 +17,7 @@ function App() {
           <UploadForm onCreated={() => setRefreshKey((k) => k + 1)} />
           <ExploreGrid refreshKey={refreshKey} />
         </div>
-        <footer className="mt-16 py-8 text-center text-white/50">Built with Vibe Coding Tools</footer>
+        <footer className="mt-16 py-8 text-center text-white/50 relative z-10">Built with Vibe Coding Tools</footer>
       </main>
     </div>
   )
