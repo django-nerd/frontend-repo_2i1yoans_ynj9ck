@@ -3,6 +3,7 @@ import Hero from './components/Hero'
 import UploadForm from './components/UploadForm'
 import ExploreGrid from './components/ExploreGrid'
 import Background3D from './components/Background3D'
+import AnimatedIcons from './components/AnimatedIcons'
 import { useState } from 'react'
 
 function App() {
@@ -13,7 +14,8 @@ function App() {
       <Navbar />
       <main className="pt-14">
         <Hero />
-        <div className="max-w-6xl mx-auto px-6 -mt-16 relative z-10">
+        <AnimatedIcons />
+        <div className="max-w-6xl mx-auto px-6 -mt-4 relative z-10">
           <UploadForm onCreated={() => setRefreshKey((k) => k + 1)} />
           <ExploreGrid refreshKey={refreshKey} />
         </div>
